@@ -16,13 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $world="Hello World";
     return view('home', [
-        "world"=>$world
+        "world"=>$world,
+        "links"=>["contatti", "chi_siamo"]
     ]);
 });
 
 Route::get('/contatti', function(){
     return view('contatti');
-});
+})->name("contatti");
 
 Route::get('/chi_siamo', function(){
     $members = [
@@ -31,4 +32,4 @@ Route::get('/chi_siamo', function(){
     return view('chi_siamo', [
         "members"=>$members
     ]);
-});
+})->name("chi_siamo");

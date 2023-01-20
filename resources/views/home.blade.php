@@ -10,15 +10,13 @@
 <body>
   <h1>{{$world}}</h1>
   <ul>
-    <li>
-        <a href="/">Home</a>
-    </li>
-    <li>
-      <a href="/contatti">Contatti</a>
-    </li>
-    <li>
-      <a href="/chi_siamo">Chi Siamo</a>
-    </li>
+    @foreach ($links as $link)
+
+      <li>
+        <a href="{{route($link)}}">{{$link}}</a>
+      </li>
+            
+      @endforeach
   </ul>
 </body>
 </html>
